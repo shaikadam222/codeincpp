@@ -10,6 +10,7 @@ function authenticate(req, res, next) {
         if(err) {
             return res.status(401).send('Unauthorized: Invalid token');
         }
+        req.userId = decoded.userId
         next();
     })
 }

@@ -2,9 +2,10 @@ const Project = require('../models/project');
 
 
 async function createproject(req,res) {
-    const {projectName} = req.body;
+    const {id,projectName} = req.body;
     try {
         const project = new Project({
+            id,
             projectName,
             files : []
         })

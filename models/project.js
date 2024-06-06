@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+const {Schema,mongoose} = require('mongoose');
+
 
 const projectSchema = new mongoose.Schema({
     id : {
@@ -11,7 +12,8 @@ const projectSchema = new mongoose.Schema({
     },
     files: [{
         filename: String,
-        content: String
+        content: String,
+        input : Schema.Types.Mixed
     }]
 });
 

@@ -3,13 +3,15 @@ const Project = require('../models/project');
 async function createfile(req,res) {
     const {id} = req.params;
     const {filename,content} = req.body;
+    if(!filename || !content) {
+        return res.send('Fielname and content is needed').status(401);  
+    }
     try {
         const prj = await Project.findOne({id});
         if(!prj) {
             return res.send('No such Project exists').status(401);
         } else {
-            prj.files.push({filename});
-            pej.files.push({content});
+            prj.files.push({filename,content});
             await prj.save();
 
             return res.send('File created successfully').status(201);
@@ -21,7 +23,6 @@ async function createfile(req,res) {
 }
 async function updatedfile(req,res) {
     const {id} = req.params;
-    console.log(id);
     var filename = req.body.filename;
     const {updatedname,content} = req.body;
     try{

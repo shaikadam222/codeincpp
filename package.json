@@ -18,6 +18,5 @@
     "mongoose": "^8.4.1",
     "node": "^20.14.0",
     "react-router-dom": "^6.23.1"
-  },
-  "devDependencies": {}
+  }
 }

@@ -28,7 +28,7 @@ async function login(req, res) {
             return res.send('User not found').status(404);
         }
         const validp = await bcrypt.compare(req.body.password,user.password);
-        if(!validp) {
+        if(!validp) {   
             return res.send('Wrong Password').status(401);
         }
         
@@ -39,6 +39,6 @@ async function login(req, res) {
         console.log(err);
         res.send('error while logging in').status(500);
     }
-}
+}   
 
 module.exports = { signUp, login };

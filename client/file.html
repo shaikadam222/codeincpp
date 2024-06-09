@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>File Management</h1>
+        
+        <h2>Create File</h2>
+        <form action="/files/1" method="post">
+            <input type="text" name="fileName" placeholder="File Name" required>
+            <textarea name="code" placeholder="Write your code here..." rows="10" required></textarea>
+            <input type="text" name="input" placeholder="Input" required>
+            <button type="submit">Create File</button>
+            <button type="button" id="compileButton">Compile Code</button>
+        </form>
+
+        <h2>Get File</h2>
+        <form action="/files/1" method="get">
+            <input type="text" name="fileId" placeholder="File ID" required>
+            <button type="submit">Get File</button>
+        </form>
+
+        <h2>Update File</h2>
+        <form action="/files/1" method="post">
+            <input type="hidden" name="_method" value="put">
+            <input type="text" name="fileId" placeholder="File ID" required>
+            <input type="text" name="fileName" placeholder="New File Name" required>
+            <textarea name="code" placeholder="New Code" rows="10" required></textarea>
+            <input type="text" name="input" placeholder="New Input" required>
+            <button type="submit">Update File</button>
+        </form>
+
+        <h2>Delete File</h2>
+        <form action="/files/1" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="text" name="fileId" placeholder="File ID" required>
+            <button type="submit">Delete File</button>
+        </form>
+        
+        <form action="index.html" method="get">
+            <button type="submit">Back to Main Page</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to compile code
+        function compileCode() {
+            // Assuming you have some logic here to compile the code
+            alert("Code compilation in progress...");
+        }
+
+        // Event listener for compile button
+        document.getElementById("compileButton").addEventListener("click", compileCode);
+    </script>
+</body>
+</html>

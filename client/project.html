@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Project Management</h1>
+        
+        <h2>Create Project</h2>
+        <form action="/" method="post">
+            <input type="text" name="projectId" placeholder="Project ID" required>
+            <input type="text" name="projectName" placeholder="Project Name" required>
+            <button type="submit">Create Project</button>
+        </form>
+
+        <h2>Get Project</h2>
+        <form action="/" method="get">
+            <input type="text" name="projectId" placeholder="Project ID" required>
+            <button type="submit">Get Project</button>
+        </form>
+
+        <h2>Update Project</h2>
+        <form action="/" method="post">
+            <input type="hidden" name="_method" value="put">
+            <input type="text" name="projectId" placeholder="Project ID" required>
+            <input type="text" name="projectName" placeholder="New Project Name" required>
+            <input type="text" name="description" placeholder="New Description" required>
+            <button type="submit">Update Project</button>
+        </form>
+
+        <h2>Delete Project</h2>
+        <form action="/" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="text" name="projectId" placeholder="Project ID" required>
+            <button type="submit">Delete Project</button>
+        </form>
+        
+        <form action="index.html" method="get">
+            <button type="submit">Back to Main Page</button>
+        </form>
+    </div>
+</body>
+</html>
